@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import checkList from "./db.json";
 import "./styles.css";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   const [name, setName] = useState('');
   const [checked, setChecked] = useState([]);
   // const checkList = ["Apple", "Banana", "Tea", "Coffee"];
-  const checkList = {"Яблоко": "Apple", "Банан": "Banana", "Чай": "Tea", "Кофе": "Coffee"};
+  // const checkList = {"Яблоко": "Apple", "Банан": "Banana", "Чай": "Tea", "Кофе": "Coffee"};
 
   // Add/Remove checked item from list
   const handleCheck = (event) => {
@@ -23,7 +23,7 @@ function App() {
   // Generate string of checked items
   const checkedItems = checked.length
     ? checked.reduce((total, item) => {
-        return total + ", " + item;
+        return total + ". " + item;
       })
     : "";
 
@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="app">
       <div className="checkList">
-        <input value={name}  onChange={e => setName(e.target.value)} placeholder="Имя" />
+        <input value={name}  onChange={e => setName(e.target.value)} placeholder="Имя" className="name" />
         <div className="list-container">
           {Object.keys(checkList).map((item, index) => (
             <div key={index}>

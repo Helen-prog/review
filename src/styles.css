@@ -12,7 +12,8 @@ body {
 }
 
 .list-container div{
-    margin-top: 10px;
+    margin-top: 10px; 
+    padding: 10px;
 }
 
 .checked-item,
@@ -24,9 +25,23 @@ body {
     text-decoration: line-through;
 }
 
-
 .otziv{
     border: 1px solid #000;
-    width: 600px;
+    width: 800px;
     height: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.name{
+    padding: 10px;
+    width: 216px;
+    font-size: 18px;
+}
+.list-container div:first-child,
+.list-container div:nth-child(2){
+    background: silver;
+}
+span{
+    margin-left: 10px;
 }
