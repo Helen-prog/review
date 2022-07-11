@@ -1,5 +1,13 @@
 body {
     font-family: Verdana, Arial, sans-serif;
+    background: -webkit-radial-gradient(right bottom, ellipse closest-corner, rgba(204, 255, 0, 1) 0%, rgba(255, 255, 204, 1) 100%);/* Chrome10+,Safari5.1+ */
+    background: -moz-radial-gradient(right bottom, ellipse closest-corner, rgba(204, 255, 0, 1) 0%, rgba(255, 255, 204, 1) 100%);/* FF3.6+ */
+    background: -o-radial-gradient(right bottom, ellipse closest-corner, rgba(204, 255, 0, 1) 0%, rgba(255, 255, 204, 1) 100%);/* Opera 11.10+ */
+    background: -ms-radial-gradient(right bottom, ellipse closest-corner, rgba(204, 255, 0, 1) 0%, rgba(255, 255, 204, 1) 100%); /* IE10+ */
+    background: radial-gradient( ellipse closest-corner at right bottom, rgba(204, 255, 0, 1) 0%, rgba(255, 255, 204, 1) 100%);/* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#CCFF00, endColorstr=#FFFFCC);/* IE6-8 */
+    background-size: auto;
+    background-repeat: repeat;
 }
 
 .app {
@@ -7,41 +15,66 @@ body {
     margin: 100px auto;
     font-size: 18px;
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
 }
 
 .list-container div{
     margin-top: 10px; 
-    padding: 10px;
-}
-
-.checked-item,
-.not-checked-item {
-    /* margin-left: 10px; */
+    padding: 10px;    
 }
 
 .checked-item {
     text-decoration: line-through;
+    color: rgb(207, 142, 0);
 }
 
 .otziv{
-    border: 1px solid #000;
-    width: 800px;
-    height: 600px;
+    border: 4px solid greenyellow;
+    flex-basis: 50%;
+    height: 665px;
     padding: 10px;
     box-sizing: border-box;
+    background: lightyellow;
+    outline: 1px solid gray;
 }
 
 .name{
     padding: 10px;
-    width: 216px;
+    width: 226px;
     font-size: 18px;
 }
-.list-container div:first-child,
-.list-container div:nth-child(2){
-    background: silver;
+.radio{
+    background: greenyellow;
+    outline: 1px solid gray;
 }
 span{
     margin-left: 10px;
+}
+.check{
+    background-color: #cdfc4e;
+    outline: 1px solid gray;
+}
+.check:first-child{
+    margin-top: 0;
+}
+
+@media (max-width: 1000px) {
+    .app{
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .otziv{
+        flex-basis: 100%;
+    }
+    .checkList{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 550px){
+    .app{
+        justify-content: space-evenly;
+    }
 }
